@@ -1,0 +1,243 @@
+@font-face {
+    font-family: "bootstrapFont";
+    src: url("../FONT/fonts/bootstrap-icons.woff") format('woff');
+}
+@font-face {
+    font-family: "bootstrapFont";
+    src: url("../FONT/fonts/bootstrap-icons.woff2") format('woff');
+}
+
+body {
+    background-color: #edf0f1;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    padding: 15px;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    background-color: #25b99a;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(44, 62, 80, 0.15);
+}
+
+header input {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: 0px;
+    box-shadow: none;
+    outline: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 400;
+    text-indent: 17px;
+    padding-right: 60px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+header input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+header input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+#add {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    right: 15px;
+    top: 15px;
+    border: 0px;
+    box-shadow: -2px 0px 4px rgba(44, 62, 80, 0.15);
+    outline: none;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+#add i {
+    position: absolute;
+    right: 25%;
+    margin: -16px 0 0 -16px;
+    color: blue;
+    font-size: 2em;
+    color: #25b99a;
+}
+
+.todo li {
+    position: relative;
+    min-height: 50px;
+    box-shadow: 0px 1px 2 px rgba(44, 62, 80, 0.15);
+    line-height: 22px;
+    padding: 14px 100px 14px 10px;
+    animation: itemFadeIn 0.5s ease;
+}
+
+.todo li .buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 50px;
+}
+
+.todo li .buttons button {
+    width: 50px;
+    height: 50px;
+    border: 0px;
+    background: none;
+    outline: none;
+    box-shadow: none;
+    float: left;
+    position: relative;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+.todo li .buttons button:last-of-type:before {
+    content: "";
+    width: 1px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    background: #cbcccc;
+}
+
+.todo li .buttons button {
+    color: #444;
+    font-size: 1.5em;
+    -webkit-transition: color 0.2s ease-out;
+    -moz-transition: color 0.2s ease-out;
+    -ms-transition: color 0.2s ease-out;
+    transition: color 0.2s ease-out;
+}
+
+.todo li .buttons button:not(.done):hover {
+    color: #879491;
+}
+
+.todo li.activity-done .buttons button.done i {
+    background-color: #5b239f;
+    border-radius: 50%;
+    color: #f4eff7;
+}
+
+#completed-items-title{
+    position: relative;
+    padding-top: 10px;
+    text-align: center;
+}
+#completed-items-title::before{
+    content: "";
+    width: 60%;
+    height: 1px;
+    background-color: #cfcdcd;
+    position: absolute;
+    right: 20%;
+    top: 5px;
+}
+
+#completed-items-title::after{
+    content: "";
+    width: 60%;
+    height: 1px;
+    background-color: #cfcdcd;
+    position: absolute;
+    right: 20%;
+    top: 40px;
+}
+
+#removePrompt {
+    width: 70%;
+    right: 15%;
+    top: 120px;
+}
+
+#removePrompt.hide {
+    animation: removePromptfadeOut 0.25s ease forwards;
+}
+#removePrompt.remove{
+    display: none;
+}
+#removePrompt.show {
+    display: block;
+    animation: removePromptfadeIn 0.3s ease;
+}
+
+#item-id{
+    display: none;
+}
+
+
+
+@keyframes removePromptfadeIn {
+    0% {
+        opacity: 0;
+        top: 100px;
+    }
+    100% {
+        opacity: 100%;
+        top: 120px;
+    }
+}
+@keyframes removePromptfadeOut{
+    0% {
+        opacity: 100%;
+        top: 120px;
+        display: block;
+    }
+    99% {
+        opacity: 0;
+        top: 100px;
+        display: block;
+    }
+    100%{
+        opacity: 0;
+        top: 100px;
+        display: none;
+    }
+}
+
+@keyframes itemFadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes itemFadeOut{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
